@@ -37,15 +37,40 @@
 				<div class="centered">
 					<div class = "login">
 					    <br />
+					    <form action = "FrontController" method = "post">
                         <input type = "text" placeholder = "아이디" name = "id"><br /><br />
                         <input type = "password" placeholder="비밀번호" name = "pw" ><br /><br />
+                        <input type = "hidden" name = "what" value = "login">
+                        <input type = "hidden" name = "result" value = "result">
                         <input type = "submit" value = "로그인" >&nbsp;&nbsp;&nbsp;&nbsp;
                         <input type = "button" value = "회원가입" onclick = "location.href='register.jsp'">
+                        </form>
                     </div>
 				</div>
 			</div>
 		</div>
 	</div>
-
+	<%
+	String result_login = (String)request.getAttribute("result");
+	if(result_login !=null){
+	  if(result_login.equals("sucess")){
+	%>
+	<script>
+	    alert("로그인에 성공했습니다.");
+	    document.location.href="index.jsp";
+	</script>
+    <%  
+	} else if(result_login.equals("fail")){
+	%>
+	<script>
+	    alert("로그인에 실패했습니다.");
+	    document.location.href="login.jsp";
+	</script>
+    <%
+	  }
+	}
+    %>
+	
+	
 </body>
 </html>

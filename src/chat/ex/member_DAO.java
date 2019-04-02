@@ -40,6 +40,7 @@ public class member_DAO {
 				dto.setPhone3(rs.getString("phone3"));
 				dto.setNick(rs.getString("nick"));
 				dtos.add(dto);
+				System.out.println(dto.getId());
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

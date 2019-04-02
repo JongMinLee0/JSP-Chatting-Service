@@ -6,6 +6,7 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class loginAction implements Action{
 	
@@ -27,12 +28,15 @@ public class loginAction implements Action{
 			String pw1 = dto.getPw();
 			if(id1.equals(id) && pw1.equals(pw)){
 				result = "sucess";
+				HttpSession session = request.getSession();
+				session.setAttribute("id", id1);
 				request.setAttribute("result", result);
 				ServletContext context = request.getServletContext();
 				RequestDispatcher dispatcher = context.getRequestDispatcher("/login.jsp");
 				dispatcher.forward(request, response);
 				compare = true;
-			}
+			} else if(id == null || pw == null)
+				continue;
 		}
 		if(!compare) {
 			result = "fail";

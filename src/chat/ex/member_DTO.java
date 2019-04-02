@@ -56,14 +56,6 @@ public class member_DTO {
 		this.nick = nick;
 	}
 
-	public member_DTO() {
-		super();
-		this.id = id;
-		this.pw = pw;
-		this.phone1 = phone1;
-		this.phone2 = phone2;
-		this.phone3 = phone3;
-		this.nick = nick;
-	}
+	
 
 }

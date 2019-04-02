@@ -54,12 +54,14 @@
 	String result_login = (String)request.getAttribute("result");
 	if(result_login !=null){
 	  if(result_login.equals("sucess")){
-	%>
-	<script>
-	    alert("로그인에 성공했습니다.");
-	    document.location.href="index.jsp";
-	</script>
-    <%  
+        ServletContext context = request.getServletContext();
+        RequestDispatcher dispatcher = context.getRequestDispatcher("/index.jsp");
+        String id = request.getParameter("id");
+        String pw = request.getParameter("pw");
+        session.setAttribute("id", id);
+        session.setAttribute("pw", pw);
+        dispatcher.forward(request, response);
+	
 	} else if(result_login.equals("fail")){
 	%>
 	<script>

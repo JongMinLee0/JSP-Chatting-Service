@@ -20,7 +20,6 @@ public class FrontController extends HttpServlet {
      */
     public FrontController() {
         super();
-        System.out.println("Constructor");
         // TODO Auto-generated constructor stub
     }
 
@@ -43,17 +42,16 @@ public class FrontController extends HttpServlet {
 	
 	public void doAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String path = request.getParameter("what");
-		System.out.println(path);
+		System.out.println("컨트롤러 : " + path);
 		
 		try {
-			System.out.println(request.getParameter("id"));
 			if(path.equals("register")) {
 				registerAction act = new registerAction();
 				act.execute(request, response);
 			} else if(path.equals("login")) {
 				loginAction act = new loginAction();
 				act.execute(request, response);
-			}
+			} 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

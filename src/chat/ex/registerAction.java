@@ -20,7 +20,6 @@ public class registerAction implements Action{
 		dto.setPhone2(request.getParameter("phone2"));
 		dto.setPhone3(request.getParameter("phone3"));
 		dto.setNick(request.getParameter("nick"));
-		System.out.println(dto.getId());
 		result = dao.memberInsert(dto);
 		String pages = (String) request.getAttribute("pages");
 		

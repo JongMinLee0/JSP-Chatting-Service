@@ -31,10 +31,22 @@
         <nav>
             <ul class = "menu">
                 <li><a href="index.jsp">Home</a></li>
+                <%
+                System.out.println(session.getAttribute("id"));
+                if(session.getAttribute("id")!=null){
+                %>
+                <li><a href="modify.jsp">User</a></li>
+                <li><a href="logout.jsp">Logout</a></li>
+                <%
+                } else if(session.getAttribute("id") == null){
+                %>
                 <li><a href="login.jsp">User</a></li>
+                <%
+                }
+                %>
                 <li><a href="">Chat</a></li>
                 <li><a href="">Board</a></li>
-                <li><a href="">Product</a></li>
+                
             </ul>
         </nav>
     </div>

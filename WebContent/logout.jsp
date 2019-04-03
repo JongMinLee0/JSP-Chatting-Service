@@ -9,7 +9,7 @@
 </head>
 <body>
     <%
-    session.removeAttribute("id");
+    session.invalidate();
     response.sendRedirect("index.jsp");
     %>
 

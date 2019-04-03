@@ -1,3 +1,6 @@
+<%@ page import = "chat.ex.member_DAO" %>
+<%@ page import = "chat.ex.member_DTO" %>
+<%@ page import = "java.util.*" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -26,7 +29,6 @@
                 <li><a href="login.jsp">User</a></li>
                 <li><a href="">Chat</a></li>
                 <li><a href="">Board</a></li>
-                <li><a href="">Product</a></li>
             </ul>
         </nav>
     </div>
@@ -50,25 +52,26 @@
 			</div>
 		</div>
 	</div>
+	
 	<%
 	String result_login = (String)request.getAttribute("result");
 	if(result_login !=null){
+		
 	  if(result_login.equals("sucess")){
-        ServletContext context = request.getServletContext();
-        RequestDispatcher dispatcher = context.getRequestDispatcher("/index.jsp");
-        String id = request.getParameter("id");
-        String pw = request.getParameter("pw");
-        session.setAttribute("id", id);
-        session.setAttribute("pw", pw);
-        dispatcher.forward(request, response);
-	
-	} else if(result_login.equals("fail")){
-	%>
+		  
+	%>	  
 	<script>
-	    alert("로그인에 실패했습니다.");
-	    document.location.href="login.jsp";
+	    document.location.href="index.jsp";
 	</script>
-    <%
+	
+	<%
+	  } else if(result_login.equals("fail")){
+		  %>
+		  <script>
+		  alert("로그인에 실패 했습니다.");
+		  document.loaction.href="login.jsp";
+		  </script>
+		  <%
 	  }
 	}
     %>

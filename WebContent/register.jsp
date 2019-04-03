@@ -77,7 +77,6 @@
 		                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 		                <input type = "hidden" value = "pages" name = "pages">
 		                <input type = "hidden" value = "register" name = "what">
-		                <input type = "hidden" value = "nickoverlap" name = "nickoverlap">
 		                <input type = "submit" value = "회원가입완료">
 		                <input type = "button" value = "취소" onclick="location.href='login.jsp'">
 		                </form>

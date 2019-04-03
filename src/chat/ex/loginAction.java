@@ -29,7 +29,10 @@ public class loginAction implements Action{
 			if(id1.equals(id) && pw1.equals(pw)){
 				result = "sucess";
 				HttpSession session = request.getSession();
+				String nick = dto.getNick();
 				session.setAttribute("id", id1);
+				session.setAttribute("nick", nick);
+				session.setAttribute("pw", pw1);
 				request.setAttribute("result", result);
 				ServletContext context = request.getServletContext();
 				RequestDispatcher dispatcher = context.getRequestDispatcher("/login.jsp");

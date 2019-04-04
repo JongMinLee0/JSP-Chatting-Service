@@ -49,7 +49,6 @@
 	board_DTO dto = new board_DTO();
 	String title ="";
 	String content = "";
-	System.out.println(index);
 	dto = dtos.get(index);
     title = dto.getTitle();
     content = dto.getContent();
@@ -57,7 +56,6 @@
     %>
     <div class="container">
 		<div class = "inner-container">
-		    <form action = "FrontController" method = "post" name = "board_write" onsubmit = "return checkValue()">
 		    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 		        <input type="text" name = "board_title" size = "74px" value = "<%= title %>" readonly>
 		        <br /><br />
@@ -66,7 +64,7 @@
 		        <input type = "hidden" value = "board_write" name = "what">
 		        <input type = "hidden" value = "pages" name = "pages">
 		        <input type = "button" value = "뒤로" onclick = "location.href='board_List.jsp'" id ="button">
-		        <input type = "submit" id = "button" value = "수정">
+		        <input type = "button" id = "button" value = "수정" onclick = "location.href='board_modify.jsp?answer=<%=index%>'">
 		    </form>
 		</div>
 	</div>

@@ -57,6 +57,9 @@ public class FrontController extends HttpServlet {
 			} else if(path.equals("board_write")) {
 				writeAction act = new writeAction();
 				act.execute(request, response);
+			} else if(path.equals("board_modify")) {
+				board_modifyAction act = new board_modifyAction();
+				act.execute(request, response);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

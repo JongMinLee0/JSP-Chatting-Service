@@ -5,6 +5,14 @@ public class board_DTO {
 	private String title;
 	private String content;
 	private String num;
+	private String seq;
+	public String getSeq() {
+		return seq;
+	}
+
+	public void setSeq(String seq) {
+		this.seq = seq;
+	}
 
 	public String getNick() {
 		return nick;

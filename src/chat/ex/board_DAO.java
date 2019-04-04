@@ -68,7 +68,7 @@ public class board_DAO {
 		try {
 			con = DriverManager.getConnection(url, uid, upw);
 			stmt = con.createStatement();
-			result = stmt.executeUpdate("insert into chat_board values('" + dto.getNick() + "','" + dto.getTitle() + "','" + dto.getContent() + "','"
+			result = stmt.executeUpdate("insert into chat_board (seq,id,title,content,click) values(seq.nextval,'" + dto.getNick() + "','" + dto.getTitle() + "','" + dto.getContent() + "','"
 					+ dto.getNum() + "')");
 			if (result == 1) {
 				System.out.println("Insert Complete");
@@ -91,37 +91,36 @@ public class board_DAO {
 		return result;
 
 	}
-//	public int boardUpdate(member_DTO dto) {
-//		Connection con = null;
-//		Statement  stmt = null;
-//		
-//		int result = 0;
-//		try {
-//			con = DriverManager.getConnection(url, uid, upw);
-//			stmt = con.createStatement();
-//			result = stmt.executeUpdate("update chat set phone1 = '"+ dto.getPhone1() + "', phone2 = '" + dto.getPhone2() +"', phone3 = '" + dto.getPhone3() + "', nick = '" + 
-//			dto.getNick() + "'where id = '" + dto.getId() + "'");
-//			if (result == 1) {
-//				System.out.println("Update Complete");
-//				con.commit();
-//			} else {
-//				System.out.println("Update fail");
-//			}
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		} finally {
-//			try {
-//				if (con != null)
-//					con.close();
-//				if (stmt != null)
-//					stmt.close();
-//			} catch (Exception e) {
-//				e.printStackTrace();
-//			}
-//		}
-//		
-//		return result;
-//	}
+	public int boardUpdate(board_DTO dto, String index) {
+		Connection con = null;
+		Statement  stmt = null;
+		
+		int result = 0;
+		try {
+			con = DriverManager.getConnection(url, uid, upw);
+			stmt = con.createStatement();
+			result = stmt.executeUpdate("update chat set title = '"+ dto.getTitle() + "', content = '" + dto.getContent() +"'where seq = '" + index + "'");
+			if (result == 1) {
+				System.out.println("Update Complete");
+				con.commit();
+			} else {
+				System.out.println("Update fail");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (con != null)
+					con.close();
+				if (stmt != null)
+					stmt.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return result;
+	}
 
 	
 }

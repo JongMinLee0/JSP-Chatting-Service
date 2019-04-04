@@ -83,7 +83,7 @@
 		    		int index = dtos.size()-1-k;
 		    	%>
 		            <tr>
-		            <td><%= index %></td>
+		            <td><%= index+1 %></td>
 		            <td><a href="board_show.jsp?answer=<%= index %>"><%= title %></a></td>
 		            <td><%= nick %></td>
 		            <td><%= num %></td>

@@ -43,7 +43,7 @@ public class FrontController extends HttpServlet {
 	public void doAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String path = request.getParameter("what");
 		System.out.println("컨트롤러 : " + path);
-		
+		request.setCharacterEncoding("UTF-8");
 		try {
 			if(path.equals("register")) {
 				registerAction act = new registerAction();
@@ -53,6 +53,9 @@ public class FrontController extends HttpServlet {
 				act.execute(request, response);
 			} else if(path.equals("modify")) {
 				modifyAction act = new modifyAction();
+				act.execute(request, response);
+			} else if(path.equals("board_write")) {
+				writeAction act = new writeAction();
 				act.execute(request, response);
 			}
 		} catch (Exception e) {

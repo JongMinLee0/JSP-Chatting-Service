@@ -40,10 +40,10 @@
         <nav>
             <ul class = "menu">
                 <li><a href="index.jsp">Home</a></li>
-                <li><a href="login.jsp">User</a></li>
+                <li><a href="modify.jsp">User</a></li>
+                <li><a href="logout.jsp">Logout</a></li>
                 <li><a href="">Chat</a></li>
-                <li><a href="">Board</a></li>
-                <li><a href="">Product</a></li>
+                <li><a href="board_List.jsp">Board</a></li>
             </ul>
         </nav>
     </div>

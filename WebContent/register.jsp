@@ -3,6 +3,7 @@
 <%@ page import = "java.util.*" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,9 +49,6 @@
             <ul class = "menu">
                 <li><a href="index.jsp">Home</a></li>
                 <li><a href="login.jsp">User</a></li>
-                <li><a href="">Chat</a></li>
-                <li><a href="">Board</a></li>
-                <li><a href="">Product</a></li>
             </ul>
         </nav>
     </div>
@@ -86,7 +84,6 @@
 		</div>
 	</div>
 	<%
-	
 	String result_page = (String)request.getAttribute("pages");
 	if(result_page !=null){
 	  if(result_page.equals("sucess")){

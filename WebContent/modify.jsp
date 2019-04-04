@@ -27,7 +27,7 @@
                 <li><a href="modify.jsp">User</a></li>
                 <li><a href="logout.jsp">Logout</a></li>
                 <li><a href="">Chat</a></li>
-                <li><a href="">Board</a></li>
+                <li><a href="board_List.jsp">Board</a></li>
             </ul>
         </nav>
     </div>
@@ -48,7 +48,7 @@
                         <input type = "password" placeholder="비밀번호" name = "pw" ><br /><br />
                         <input type = "hidden" name = "what" value = "modify">
                         <input type = "hidden" name = "result" value = "result">
-                        <input type = "button" value = "회원정보수정하기" onclick = "return checkValue()">
+                        <input type = "button" value = "회원정보수정하기" onclick = "checkValue()">
                     </div>
 				</div>
 			</div>
@@ -65,7 +65,7 @@
     		document.write(pw);
     		document.write(pw2);
     		if(pw2 == pw){
-    			location.href = "modify_2.jsp";
+    			document.location.href = "modify_2.jsp"
     		}else{
     			alert("비밀번호가 틀렸습니다.");
     			document.location.href = "modify.jsp";

@@ -9,10 +9,10 @@ public class registerAction implements Action{
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("utf-8");
 		member_DTO dto = new member_DTO();
 		member_DAO dao = new member_DAO();
 		int result = 0;
-		
 		
 		dto.setId(request.getParameter("id"));
 		dto.setPw(request.getParameter("pw"));
@@ -20,9 +20,10 @@ public class registerAction implements Action{
 		dto.setPhone2(request.getParameter("phone2"));
 		dto.setPhone3(request.getParameter("phone3"));
 		dto.setNick(request.getParameter("nick"));
+		
+		
 		result = dao.memberInsert(dto);
 		String pages = (String) request.getAttribute("pages");
-		
 		if(result==1) {
 			pages = "sucess";
 			request.setAttribute("pages", pages);
@@ -40,5 +41,6 @@ public class registerAction implements Action{
 		
 		
 	}
+	
 
 }

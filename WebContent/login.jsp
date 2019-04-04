@@ -27,8 +27,7 @@
             <ul class = "menu">
                 <li><a href="index.jsp">Home</a></li>
                 <li><a href="login.jsp">User</a></li>
-                <li><a href="">Chat</a></li>
-                <li><a href="">Board</a></li>
+                
             </ul>
         </nav>
     </div>

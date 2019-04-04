@@ -37,6 +37,8 @@
                 %>
                 <li><a href="modify.jsp">User</a></li>
                 <li><a href="logout.jsp">Logout</a></li>
+                <li><a href="">Chat</a></li>
+                <li><a href="board_List.jsp">Board</a></li>
                 <%
                 } else if(session.getAttribute("id") == null){
                 %>
@@ -44,8 +46,7 @@
                 <%
                 }
                 %>
-                <li><a href="">Chat</a></li>
-                <li><a href="">Board</a></li>
+                
                 
             </ul>
         </nav>

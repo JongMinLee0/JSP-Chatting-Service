@@ -112,3 +112,22 @@
 - 제목과 글을 수정한 후 수정완료를 클릭하면 수정이 완료된다.
 
 <br />
+
+## 2. 소스 코드 및 구조
+
+<br />
+
+### 홈페이지 화면
+```jsp
+<%
+    if(session.getAttribute("id")!=null){
+%>
+    <li><a href="modify.jsp">User</a></li>
+    <li><a href="logout.jsp">Logout</a></li>
+    <li><a href="board_List.jsp">Board</a></li>
+
+```
+- if조건문을 활용, 세션에 id값이 없으면 로그인 한 것이 아니므로 접근 불가능한 페이지목록을 숨겼다.
+
+<br />
+

@@ -13,25 +13,18 @@ public class board_modifyAction implements Action{
 		board_DAO dao = new board_DAO();
 		
 		int result = 0;
-		String index = request.getParameter("index");
+		String answer = request.getParameter("index");
 		dto.setTitle(request.getParameter("board_title"));
-		dto.setContent("put_content");
-		result = dao.boardUpdate(dto, index);
+		dto.setContent(request.getParameter("put_content"));
+		System.out.println(dto.getContent());
+		System.out.println(dto.getTitle());
+		result = dao.boardUpdate(dto, answer);
         String pages = (String) request.getAttribute("pages");
 		
 		if(result==1) {
-			pages = "sucess";
-			request.setAttribute("pages", pages);
-			ServletContext context = request.getServletContext();
-			RequestDispatcher dispatcher = context.getRequestDispatcher("/board_modify.jsp");
-			dispatcher.forward(request, response);
-			
+			response.sendRedirect("board_List.jsp");
 		}else {
-			pages = "fail";
-			request.setAttribute("pages", pages);
-			ServletContext context = request.getServletContext();
-			RequestDispatcher dispatcher = context.getRequestDispatcher("/board_modify.jsp");
-			dispatcher.forward(request, response);
+			response.sendRedirect("board_modify.jsp");
 		}
 	}
 

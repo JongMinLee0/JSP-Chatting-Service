@@ -19,7 +19,7 @@ public class writeAction implements Action {
 		dto.setTitle(request.getParameter("board_title"));
 		dto.setContent(request.getParameter("put_content"));
 		dto.setNum("0");
-		
+		dto.setSeq(request.getParameter("index"));
 		result = dao.boardInsert(dto);
 		String pages = (String) request.getAttribute("pages");
 		

@@ -1,6 +1,7 @@
 <%@ page import = "chat.ex.board_DAO" %>
 <%@ page import = "chat.ex.board_DTO" %>
 <%@ page import = "java.util.*" %>
+<%@ page import = "java.sql.*" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -49,7 +50,6 @@
                 <li><a href="index.jsp">Home</a></li>
                 <li><a href="modify.jsp">User</a></li>
                 <li><a href="logout.jsp">Logout</a></li>
-                <li><a href="">Chat</a></li>
                 <li><a href="board_List.jsp">Board</a></li>
             </ul>
         </nav>
@@ -94,9 +94,10 @@
 		        </tbody>
 		    </table>
 		    <br />
-		          <input type = "button" id = "button" value = "글작성" onclick = "location.href='board_write.jsp'">
+		          <input type = "button" id = "button" value = "글작성" onclick = "location.href='board_write.jsp?index=<%=dtos.size()+1%>'">
 		</div>
 	</div>
+    
 
 </body>
 </html>

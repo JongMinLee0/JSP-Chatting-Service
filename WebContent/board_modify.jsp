@@ -11,7 +11,7 @@
 <script src = "https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src = "js/bootstrap.js"></script>
 <meta charset="UTF-8">
-<title>게시판 입니다.</title>
+<title>게시판 수정화면 입니다.</title>
 <style>
     .container{
         left: 18%;
@@ -36,7 +36,6 @@
                 <li><a href="index.jsp">Home</a></li>
                 <li><a href="modify.jsp">User</a></li>
                 <li><a href="logout.jsp">Logout</a></li>
-                <li><a href="">Chat</a></li>
                 <li><a href="board_List.jsp">Board</a></li>
             </ul>
         </nav>
@@ -63,7 +62,6 @@
 		        <textarea name="put_content" rows=10 style="width:54%;"><%= content %></textarea>
 		        <br /><br />
 		        <input type = "hidden" value = "board_modify" name = "what">
-		        <input type = "hidden" value = "pages" name = "pages">
 		        <input type = "hidden" value = "<%=index %>" name = "index">
 		        <input type = "button" value = "뒤로" onclick = "location.href='board_show.jsp?answer=<%=index %>'" id ="button">
 		        <input type = "submit" id = "button" value = "수정완료">
@@ -71,4 +69,7 @@
 		</div>
 	</div>
 </body>
+
+
+
 </html>

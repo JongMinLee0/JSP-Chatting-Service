@@ -38,6 +38,7 @@ function checkValue(){
 </script>
 </head>
 <body>
+<%String index = request.getParameter("index"); %>
     <header>
     <div class = "wrapper">
         <h1>R.C Service</h1>
@@ -46,7 +47,6 @@ function checkValue(){
                 <li><a href="index.jsp">Home</a></li>
                 <li><a href="modify.jsp">User</a></li>
                 <li><a href="logout.jsp">Logout</a></li>
-                <li><a href="">Chat</a></li>
                 <li><a href="board_List.jsp">Board</a></li>
             </ul>
         </nav>
@@ -62,6 +62,7 @@ function checkValue(){
 		        <br /><br />
 		        <input type = "hidden" value = "board_write" name = "what">
 		        <input type = "hidden" value = "pages" name = "pages">
+		        <input type = "hidden" value = <%=index %> name = "index">
 		        <input type = "submit" id = "button" value = "글작성">
 		    </form>
 		</div>

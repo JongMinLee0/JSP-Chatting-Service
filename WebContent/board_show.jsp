@@ -36,7 +36,6 @@
                 <li><a href="index.jsp">Home</a></li>
                 <li><a href="modify.jsp">User</a></li>
                 <li><a href="logout.jsp">Logout</a></li>
-                <li><a href="">Chat</a></li>
                 <li><a href="board_List.jsp">Board</a></li>
             </ul>
         </nav>
@@ -52,7 +51,10 @@
 	dto = dtos.get(index);
     title = dto.getTitle();
     content = dto.getContent();
-		
+	int count = Integer.parseInt(dto.getNum())+1;
+	String count2 = count + "";
+	dto.setNum(count2);
+	dao.indexUpdate(dto, index);
     %>
     <div class="container">
 		<div class = "inner-container">

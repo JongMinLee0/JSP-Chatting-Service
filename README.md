@@ -22,7 +22,7 @@
 
 <br />
 
--회원가입을 누른뒤 회원가입 page로 넘어가 보자.
+- 회원가입을 누른뒤 회원가입 page로 넘어가 보자.
 
 <br />
 
@@ -76,7 +76,7 @@
 
 <br />
 
-#### 5. 게시판 
+#### 5. 게시판(board_List.jsp)
 
 <img src="./img/초기목록.png" width ="70%">
 
@@ -84,7 +84,7 @@
 
 <br />
 
-##### 5-1. 글작성
+##### 5-1. 글작성(board_write.jsp)
 
 <img src="./img/글작성화면.png" width ="70%">
 <img src="./img/글작성.png" width ="70%">
@@ -101,7 +101,7 @@
 
 <br />
 
-##### 5-3. 글 수정
+##### 5-3. 글 수정(board_modify.jsp)
 
 <img src="./img/제목누른뒤.png" width ="70%">
 <img src="./img/수정화면.png" width ="70%">
